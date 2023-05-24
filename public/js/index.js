@@ -5,13 +5,15 @@ window.onload = function(){
     let destacado = document.querySelectorAll('p');
     let fondo = document.querySelector('body');
     let enlace = document.querySelector('a');
+    let logo = document.querySelector(".logoDH");
+    let menu = document.querySelector("#menu");
     
     let nombre = prompt('Ingrese su nombre');
     console.log(nombre);
     if(nombre !=''){
-        subtitulo.innerHTML += nombre;
+        subtitulo.innerHTML += " " + nombre;
     }else{
-        subtitulo.innerHTML += 'INVITADO';
+        subtitulo.innerHTML += ' INVITADO';
     }
         
     subtitulo.style.textTransform = 'uppercase';
@@ -31,4 +33,14 @@ window.onload = function(){
     
 
     container.style.display = 'block';
+
+    console.log(logo)
+    logo.addEventListener("click", () => {
+        menu.classList.toggle("mostrar");
+        
+    })
+
+    menu.addEventListener("mouseout", () => {
+        menu.classList.toggle("mostrar")
+    })
 }
